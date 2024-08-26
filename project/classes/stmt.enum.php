@@ -4,8 +4,10 @@ namespace IAD\classes;
 defined('_IAD') or die();
 
 enum Stmt:string {
-    case getPassword = 'SELECT `password` FROM user WHERE username = ?|s';
-    case getAllUser = 'SELECT user FROM user';
+    // register user
+    case addUser ='INSERT INTO user (username, `password`) VALUES (?, ?)|ss';
+    // get all user data
+    case getUser ='SELECT id, username, `password`, registered_at FROM user WHERE username = ?|s';
 
     // gibt den ersten teil des cases zurück -> statement
     public function getQuery():string {

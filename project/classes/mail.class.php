@@ -35,4 +35,8 @@ final class Mail extends Server {
             return false;
         }
     }
+
+    public function getMail():string {
+        return $this->mail ?? '';
+    }
 }

@@ -1,0 +1,16 @@
+Es soll eine kleine Anwendung erstellt werden, an der sich Benutzer mit Benutzername (Mail) und Kennwort anmelden können. Nicht registrierte Benutzer können sich jederzeit mit Benutzernamen und 2 maliger Eingabe eines Kennworts registrieren.
+
+Jede An, Ab- und fehlerhafte Anmeldung soll in der Datenbank protokolliert werden.
+
+Bei der Registrierung kann der Benutzer entweder selbst eine Kennwort vergeben oder sich eines erzeugen lassen.
+
+Jegliche Requests nach dem Aufruf der Startseite sollen per AJAX angefordert werden.
+
+Wenn möglich werden in PHP Componenten nach dem MVC-Muster umgesetzt.
+
+Für JS und CSS werden die beiden Frameworks jQuery und Bootstrap verwendet.
+
+
+db_user user_project
+db_host localhost
+db_pass Pa$$w0rd

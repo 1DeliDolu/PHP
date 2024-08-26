@@ -1,0 +1,25 @@
+Aufgabe:
+
+Beim Klick auf
+- PROJECT und Home soll auf der Seite mit der Ausgabe "Startseite" erfolgen
+- Statistik soll auf der Seite eine Ausgabe mit "Statistik" erfolgen
+
+Beides soll wie gehabt über das MVC-Pattern durchgeführt werden.
+
+In allen Links sind die Attribute data-target und data-template bereits vorhanden.
+
+data-target = content.show
+data-template = home | statistics
+
+
+Was wird im ersten Schritt benötigt?
+
+- components
+    - content
+        - template
+            - default.php   -> text "Startseite"
+            - home.php
+            - statistics.php    -> text "Statistik"
+        - controller.php -> methods: show()
+        - view.php
+        - (model.php)

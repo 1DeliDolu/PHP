@@ -31,7 +31,7 @@ final class Password {
             }else{
                 $this->password = $password;
             }
-            }catch(Exception $e){
+        }catch(Exception $e){
             Log::add($e);
         }
     }

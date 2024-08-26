@@ -71,11 +71,11 @@ function loadedForm(id) {
         });        
         // send data to server
         new AJAX($data, (response) => {
-            if(response.success){
-                $('.modal').hide();
+            if(response.html){
+                $('.modal').modal('hide');
             }else{
                 // ??
-                $('.modal').shake();
+                $('.modal .modal-dialog').shake();
             }            
         });
     });
@@ -106,6 +106,12 @@ function loadedForm(id) {
     }).on('input',(e)=>{
         if($(e.target).val().length == 0){
             $(e.target).removeClass('is-invalid is-valid');
+            // add without Y: (20240826)
+            $('.password + .progress').attr('aria-valuenow', 0);
+            $('.password + .progress .progress-bar').css({
+                width: 0
+            }).removeClass('bg-success bg-warning bg-danger bg-info bg-light bg-dark');
+            // end add
         }else{
             new AJAX(
                 {
@@ -120,8 +126,10 @@ function loadedForm(id) {
                             return 'bg-success';
                         }else if(percent <= .5){
                             return 'bg-danger';
-                        }else{
+                        }else if(percent > 0){  // change without Y: (20240826)
                             return 'bg-warning';
+                        }else{                  // add without Y: (20240826)
+                            return '';          // add without Y: (20240826)
                         }
                     })(response.html.percentage);
                     $('.password + .progress').attr('aria-valuenow', response.html.percentage);
@@ -168,4 +176,16 @@ const showModal = (response) => {
     $(`#${response.html.id}`).modal('show').on('hidden.bs.modal', (e) => {
         $(e.target).remove();
     });
+}
+
+
+// jquery prototype - Erweiterung von jQuery durch eigene Methoden
+jQuery.fn.shake = function(options = {}) {
+    this.each(function(i) {
+        for (var x = 1; x <= 3; x++) {
+            $(this).animate({left: -5}, 50).animate({left: 5}, 50);
+        }
+        $(this).animate({left: 0}, 50);
+    });
+    return this;
 }

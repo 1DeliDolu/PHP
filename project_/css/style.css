@@ -1,0 +1,111 @@
+.password-requirements {
+    display: grid;
+    grid-template-columns: 1fr;
+    list-style: none !important;
+}
+.password-requirements > li {
+    margin-top: .25rem;
+    font-size: .875em
+}
+.valid-feedback {
+    color: var(--bs-form-valid-color);
+    display: unset !important;
+}
+.invalid-feedback {
+    color: var(--bs-form-invalid-color);
+    display: unset !important;
+}
+
+.statistics .item {
+    display:grid;
+    grid-template-columns: 3fr repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin: 1rem 0;
+    gap: .2rem;
+}
+.statistics .msg {
+    font-weight: bold;
+    grid-column: span 2;
+}
+.statistics .success .msg {
+    color: var(--bs-success);
+}
+.statistics .danger .msg {
+    color: var(--bs-danger);
+}
+.statistics .browser {
+    grid-column: span 3;
+}
+
+ul.rootdir li {
+    font-size: 0.9rem;
+    list-style: none;
+}
+ul.rootdir li::before {
+    font-family: 'bootstrap-icons';
+    font-size: 0.9rem;
+    margin-right: .5rem
+}
+
+ul.rootdir li.file {
+    font-size: .8rem;
+    font-weight: normal;
+    text-transform: lowercase !important;
+}
+ul.rootdir > li.file {
+    margin-left: .3rem;
+}
+ul.rootdir li.subdir {
+    background-color: rgba(var(--bs-emphasis-color-rgb), .015);
+    border-radius: .5rem;
+    font-weight: bold;
+    margin: .15rem;
+    padding: .15rem;
+    text-transform: uppercase;
+}
+ul.rootdir li.subdir::before {
+    color: var(--bs-orange);
+    content: '\F3D9';
+}
+ul.rootdir li.file::before {
+    content: '\F3C0';
+}
+ul.rootdir li.file.css::before {
+    color: var(--bs-info);
+    content: '\F742';
+}
+ul.rootdir li.file.drawio::before, ul.rootdir li.file.ico::before, ul.rootdir li.file.jpg::before, ul.rootdir li.file.jpeg::before, ul.rootdir li.file.png::before, ul.rootdir li.file.gif::before {
+    color: var(--bs-gray-600);
+}
+ul.rootdir li.file.drawio::before {
+    content: '\F310';
+}
+ul.rootdir li.file.ico::before, ul.rootdir li.file.jpg::before, ul.rootdir li.file.jpeg::before, ul.rootdir li.file.png::before, ul.rootdir li.file.gif::before {
+    content: '\F39B';
+}
+ul.rootdir li.file.html::before {
+    content: '\F749';
+}
+ul.rootdir li.file.js::before {
+    color: var(--bs-yellow);
+    content: '\F74C';
+}
+ul.rootdir li.file.php::before {
+    color: var(--bs-danger);
+    content: '\F757';
+}
+ul.rootdir li.file.sql::before {
+    color: var(--bs-pink);
+    content: '\F8C4';
+}
+ul.rootdir li.file.txt::before {
+    content: '\F766';
+}
+ul.rootdir li.file.woff::before, ul.rootdir li.file.woff2::before {
+    content: '\F768';
+}
+.smalltext {
+    font-size: .7em;
+    font-weight: normal;
+    text-transform: lowercase;
+}
